@@ -1,37 +1,57 @@
 import React from "react";
-import { Card, Typography, CardHeader, CardContent } from "@mui/material";
+import { Card, Typography, CardHeader, CardContent, Grid } from "@mui/material";
 import PageCard from "./PageCard";
 import InventoryPageData from "../pages/inventoryPage/InventoryPageData";
 
-/**
- * TODO
- * Split this card into 2 sections,
- * on containing inventory action history and the other containing updates.
- * These will have to be added later after creating an API for them.
- */
+import { makeStyles } from "@material-ui/styles";
+
+const useStyles = makeStyles((theme) => ({
+  card: {
+    height: "250px",
+    flexShrink: 0,
+    margin: "auto",
+  },
+}));
+
 
 const ActivityCard = () => {
+  const classes = useStyles();
   return (
     <div className="activity-card-wrapper">
       <div>
-        <Card elevation={3}>
-          <CardHeader title={'Testing123'}></CardHeader>
-          <CardContent>
-            <Typography variant="body2">
-              This is testing the feed.
-              <br></br>
-              <a
-                style={{ textDecoration: "none", fontWeight: "bold" }}
-              >
-                this a test 123 123 123.
-              </a>
-            </Typography>
-          </CardContent>
-        </Card>
+        <Grid container spacing={0}>
+          <Grid item xs={6} md={6} lg={6}>
+            <Card elevation={3} classes={{root: classes.card}}>
+              <CardHeader title={"Activity"}></CardHeader>
+              <CardContent>
+                <Typography variant="body2">
+                  This is testing the feed.
+                  <br></br>
+                  <a style={{ textDecoration: "none", fontWeight: "bold" }}>
+                    this a test 123 123 123.
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={6} md={6} lg={6}>
+            <Card elevation={3} classes={{root: classes.card}}>
+              <CardHeader title={"Updates"}></CardHeader>
+              <CardContent>
+                <Typography variant="body2">
+                  This is testing the feed.
+                  <br></br>
+                  <a style={{ textDecoration: "none", fontWeight: "bold" }}>
+                    this a test 123 123 123.
+                  </a>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
       </div>
     </div>
   );
 };
-
 
 export default ActivityCard;

@@ -6,6 +6,7 @@ import Drawer from "./components/Drawer";
 import LandingPage from "./pages/LandingPage";
 import InventoryPage from "./pages/inventoryPage/InventoryPage";
 import { makeStyles } from "@material-ui/core/styles";
+import UpdatePage from "./pages/UpdatePage";
 
 function App() {
   const [navBarOpen, setNavBarOpen] = useState(false);
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route exact path="/inventory">
               <InventoryPage />
+            </Route>
+            <Route exact path='/update'>
+              <UpdatePage />
             </Route>
           </Switch>
         </div>
