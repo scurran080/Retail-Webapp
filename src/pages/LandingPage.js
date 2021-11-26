@@ -17,7 +17,7 @@ const LandingPage = () => {
         <Container>
           <Grid container spacing={4}>
             {LandingPageData.map((data) => (
-              <Grid item key={data.id} xs={12} md={6} lg={4}>
+              <Grid item key={data.id} xs={12} md={4} lg={4}>
                 <LandingCard data={data}/>
               </Grid>
             ))}

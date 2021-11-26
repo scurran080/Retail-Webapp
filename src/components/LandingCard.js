@@ -41,12 +41,6 @@ const LandingCard = ({ data }) => {
           <Typography variant="body2" classes={{paper: classes.text}} variant="h6">
             {data.body}
             <br></br>
-            <a
-              href={data.link}
-              style={{ textDecoration: "none", fontWeight: "bold" }}
-            >
-              {data.link}
-            </a>
           </Typography>
         </CardContent>
       </Card>
